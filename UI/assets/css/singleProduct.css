@@ -1,0 +1,22 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    background-color: #fff;
+    width: 70%;
+    margin: 20px auto;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 4px 4px 8px #ccc;
+}
+
+#price{
+    /* float: right; */
+    align-self: flex-end;
+    border: 1px solid #666;
+    background-color: #666;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #ccc;
+}
