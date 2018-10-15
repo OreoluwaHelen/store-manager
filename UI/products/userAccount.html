@@ -37,23 +37,23 @@
 
             <div class="field">
                 <label for="firstname">FIRST NAME</label>
-                <input type="text" id="firstname" placeholder="attendant's firstname">
+                <input type="text" id="firstname" placeholder="attendant's firstname" minlength="3" required>
             </div>
             <div class="field">
                 <label for="lastname">LAST NAME</label>
-                <input type="text" id="lastname" placeholder="attendant's lastname">
+                <input type="text" id="lastname" placeholder="attendant's lastname" minlength="4" required>
             </div>
             <div class="field">
                 <label for="username">USERNAME</label>
-                <input type="email" id="username" placeholder="attendant's username">
+                <input type="email" id="username" placeholder="attendant's username" required>
             </div>
             <div class="field">
                 <label for="password">PASSWORD</label>
-                <input type="password" id="password" placeholder="">
+                <input type="password" id="password" placeholder="" minlength="8" required>
             </div>
             <div class="field">
                 <label for="password">PASSWORD</label>
-                <input type="password" id="password" placeholder="confirm password">
+                <input type="password" id="confirmPassword" placeholder="confirm password" minlength="8" required>
             </div>
             <div class="field">
                     <input type='submit' id="submit" value="ADD" class="btn">
@@ -103,6 +103,8 @@
             </tbody>
         </table>
     </div>
+
+    <script src="../assets/javascript/userAccount.js"></script>
 </body>
 
 </html>

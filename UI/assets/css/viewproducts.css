@@ -23,3 +23,12 @@
     color: #fff;
     background-color: #ccc;
 }
+
+#btn{
+    margin-bottom: 20px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #bbb;
+    float: right;
+    margin-top: 20px;
+}
