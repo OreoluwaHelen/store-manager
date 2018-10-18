@@ -8,7 +8,7 @@ function checkPass(){
         pwd2.setCustomValidity("not matching")
     }
     else {
-
+        pwd2.setCustomValidity("")
     }
 }
 
