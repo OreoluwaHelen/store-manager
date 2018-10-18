@@ -28,7 +28,13 @@
     margin-bottom: 20px;
     height: 40px;
     border-radius: 5px;
-    box-shadow: 2px 2px 2px #bbb;
+    box-shadow: 2px 2px 4px #bbb;
     float: right;
     margin-top: 20px;
+    border: 1px #bbb solid;
+}
+#btn:hover{
+    background-color: #ccc;
+    color: #fff;
+    outline: none;
 }
