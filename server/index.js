@@ -28,6 +28,15 @@ app.post('/api/v1/products', (req, res) => {
   });
 });
 
-app.listen(3000, () => { console.log('the app just started'); });
+app.get('/api/v1/products', (req, res) => {
+  res.status(200).send({
+    status: 'success',
+    products: db,
+  });
+});
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => { console.log('the app just started'); });
 
 export default app;
