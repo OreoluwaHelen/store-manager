@@ -7,12 +7,12 @@ const request = supertest(app);
 const { expect } = chai;
 
 describe('initial Testing', () => {
-    it('should display welcome', (done) => {
+  it('should display welcome', (done) => {
     request
-    .get('/')
-    .end(( err, res) => {
+      .get('/')
+      .end((err, res) => {
         expect(res.body.message).to.equal('welcome to your store manager');
         done();
-    });
-    });
+      });
+  });
 });
