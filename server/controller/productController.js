@@ -11,15 +11,23 @@ const productController = {
   },
 
   createProduct: (req, res) => {
+    if (!req.body.name || req.body.name.length < 3) {
+      return res.status(400).send({
+        status: 'fail',
+        message: 'name is required and must be at least 3 letters long',
+      });
+    }
+
     const product = {
       id: products.length + 1,
       name: req.body.name,
       desc: req.body.desc,
+      price: req.body.price,
       stock: req.body.stock,
       availableStock: req.body.availableStock,
     };
     products.push(product);
-    res.status(201).send({
+    return res.status(201).send({
       status: 'success',
       message: 'product was created successfully',
       product,

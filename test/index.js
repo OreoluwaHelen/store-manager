@@ -47,6 +47,7 @@ describe('Product Endpoint', () => {
       .send({
         name: 'macbook',
         desc: 'good laptop',
+        price: 5000,
         stock: 2,
         availableStock: 1,
       })
@@ -55,6 +56,22 @@ describe('Product Endpoint', () => {
         expect(res.body.message).to.equal('product was created successfully');
         expect(res.body.product).to.be.an('object');
         expect(res.body.product.id).to.equal(product.id);
+        done(err);
+      });
+  });
+
+  it('should create a product ', (done) => {
+    request
+      .post('/api/v1/products')
+      .send({
+        desc: 'good laptop',
+        price: 5000,
+        stock: 2,
+        availableStock: 1,
+      })
+      .end((err, res) => {
+        expect(res.body.status).to.equal('fail');
+        expect(res.body.message).to.equal('name is required and must be at least 3 letters long');
         done(err);
       });
   });
@@ -85,6 +102,30 @@ describe('Product Endpoint', () => {
       .end((err, res) => {
         expect(res.body.status).to.be.equal('fail');
         expect(res.body.message).to.be.equal('product not found');
+        done(err);
+      });
+  });
+});
+
+describe('Sales Endpoint', () => {
+  it('should create sale order', (done) => {
+    request
+      .post('/api/v1/sales')
+      .send({
+        products: [
+          {
+            product: 'macbook',
+            quantity: 2,
+            price: 5000000,
+          },
+        ],
+        totalPrice: 2000000,
+      })
+      .end((err, res) => {
+        expect(res.body.status).to.equal('success');
+        expect(res.body.order).to.be.an('object');
+        expect(res.body.message).to.equal('order created successfully');
+        expect(res.body.order.products).to.be.an('array');
         done(err);
       });
   });
