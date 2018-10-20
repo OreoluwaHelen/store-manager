@@ -59,15 +59,33 @@ describe('Product Endpoint', () => {
       });
   });
 
-  describe('Product Endpoint', () => {
-    it('should get productS', (done) => {
-      request
-        .get('/api/v1/products')
-        .end((err, res) => {
-          expect(res.body.status).to.equal('success');
-          expect(res.body.products).to.be.an('array');
-          done(err);
-        });
-    });
+  it('should get productS', (done) => {
+    request
+      .get('/api/v1/products')
+      .end((err, res) => {
+        expect(res.body.status).to.equal('success');
+        expect(res.body.products).to.be.an('array');
+        done(err);
+      });
+  });
+
+  it('should get product with id', (done) => {
+    request
+      .get('/api/v1/products/1')
+      .end((err, res) => {
+        expect(res.body.status).to.be.equal('success');
+        expect(res.body.product).to.be.an('object');
+        done(err);
+      });
+  });
+
+  it('should not get product with wrong id', (done) => {
+    request
+      .get('/api/v1/products/10000000')
+      .end((err, res) => {
+        expect(res.body.status).to.be.equal('fail');
+        expect(res.body.message).to.be.equal('product not found');
+        done(err);
+      });
   });
 });
