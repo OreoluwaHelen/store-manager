@@ -28,17 +28,23 @@ const productController = {
   },
 
   getSingleProduct: (req, res) => {
-    products.forEach((product) => {
-      if (product.id === Number(req.params.productId)) {
-        return res.status(200).send({
-          status: 'success',
-          product,
-        });
+    let product = null;
+    products.forEach((p) => {
+      if (p.id === Number(req.params.productId)) {
+        product = p;
       }
     });
-    return res.status(404).send({
-      status: 'fail',
-      message: 'product not found',
+
+    if (product === null) {
+      return res.status(404).send({
+        status: 'fail',
+        message: 'product not found',
+      });
+    }
+    return res.status(200).send({
+      status: 'success',
+      product,
+
     });
   },
 };
