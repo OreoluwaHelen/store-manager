@@ -2,7 +2,7 @@
   "name": "store-manager",
   "version": "1.0.0",
   "description": "bootcamp project",
-  "main": "./build/index.js",
+  "main": "./server/index.js",
   "scripts": {
     "start": "babel-node ./server/index.js",
     "dev": "nodemon ./server/index.js --exec babel-node",
