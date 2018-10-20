@@ -13,6 +13,22 @@ const product = {
   availableStock: 1,
 };
 
+const products = [
+  {
+    id: 1,
+    name: 'macbook',
+    desc: 'good laptop',
+    stock: 2,
+    availableStock: 1,
+  },
+  {
+    id: 2,
+    name: 'macbook',
+    desc: 'good laptop',
+    stock: 2,
+    availableStock: 1,
+  },
+];
 describe('initial Testing', () => {
   it('should display welcome', (done) => {
     request
@@ -25,7 +41,7 @@ describe('initial Testing', () => {
 });
 
 describe('Product Endpoint', () => {
-  it('should create ', (done) => {
+  it('should create a product ', (done) => {
     request
       .post('/api/v1/products')
       .send({
@@ -41,5 +57,17 @@ describe('Product Endpoint', () => {
         expect(res.body.product.id).to.equal(product.id);
         done(err);
       });
+  });
+
+  describe('Product Endpoint', () => {
+    it('should get productS', (done) => {
+      request
+        .get('/api/v1/products')
+        .end((err, res) => {
+          expect(res.body.status).to.equal('success');
+          expect(res.body.products).to.be.an('array');
+          done(err);
+        });
+    });
   });
 });
