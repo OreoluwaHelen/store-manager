@@ -41,6 +41,13 @@ const salesController = {
     });
   },
 
+  getSales: (req, res) => {
+    res.status(200).send({
+      status: 'success',
+      sales,
+    });
+  },
+
 };
 
 export default salesController;
