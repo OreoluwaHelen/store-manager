@@ -151,4 +151,14 @@ describe('Order Endpoint', () => {
         done(err);
       });
   });
+  it('should get all sales order', (done) => {
+    request
+      .get('/api/v1/sales')
+      .end((err, res) => {
+        expect(res.body.status).to.equal('success');
+        // expect(res.body.order).to.be.an('object');
+        expect(res.body.sales).to.be.an('array');
+        done(err);
+      });
+  });
 });
