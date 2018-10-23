@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    background: url('../images/ore_bg.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.welcomeImage {
+    min-height: 300px;
+    width: 100%;
+}
+.welcomeImage>h3 {
+    text-align: center;
+    font-size: 3rem
+}
+.formGroup input:hover {
+    border:1px solid red;
+}
+
+.formGroup button{
+    background-color: rgb(116, 116, 245);
+    color: #fff;
+    font-size: 14px;
+} 
+
+.formGroup button:hover {
+    background-color: rgb(14, 14, 121);
+}
