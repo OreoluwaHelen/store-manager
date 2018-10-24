@@ -2,15 +2,16 @@ import db from '../db';
 
 const { products } = db;
 
-const productController = {
-  getProducts: (req, res) => {
+class productController  {
+
+   static getProducts(req, res) {
     res.status(200).send({
       status: 'success',
       products,
     });
-  },
+  }
 
-  createProduct: (req, res) => {
+   static createProduct(req, res) {
     if (!req.body.name || req.body.name.length < 3) {
       return res.status(400).send({
         status: 'fail',
@@ -33,9 +34,9 @@ const productController = {
       product,
 
     });
-  },
+  }
 
-  getSingleProduct: (req, res) => {
+   static getSingleProduct (req, res) {
     let product = null;
     products.forEach((p) => {
       if (p.id === Number(req.params.productId)) {
@@ -54,7 +55,7 @@ const productController = {
       product,
 
     });
-  },
+  }
 };
 
 

@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import productRoute from './routes/productRoutes';
-import salesRoute from './routes/salesRoute';
+import productRoute from './routes/api/v1/productRoutes';
+import salesRoute from './routes/api//v1/salesRoute';
 
 const app = express();
 
