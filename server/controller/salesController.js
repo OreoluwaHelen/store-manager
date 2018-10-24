@@ -2,9 +2,9 @@ import db from '../db';
 
 const { sales } = db;
 
-const salesController = {
+class salesController {
 
-  createSale: (req, res) => {
+  static createSale(req, res) {
     const order = {
       id: sales.length + 1,
       products: req.body.products,
@@ -17,10 +17,10 @@ const salesController = {
       message: 'order created successfully',
       order,
     });
-  },
+  }
 
 
-  getSingleSaleOrder: (req, res) => {
+  static getSingleSaleOrder(req, res) {
     let order = null;
     sales.forEach((o) => {
       if (o.id === Number(req.params.orderId)) {
@@ -39,14 +39,14 @@ const salesController = {
       order,
 
     });
-  },
+  }
 
-  getSales: (req, res) => {
+  static getSales (req, res) {
     res.status(200).send({
       status: 'success',
       sales,
     });
-  },
+  }
 
 };
 
