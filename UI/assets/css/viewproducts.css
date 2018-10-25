@@ -24,6 +24,19 @@ body{
      cursor: pointer;
      margin: 10px 0;
 }
+select{
+    width: 50%;
+    height: 50px;
+    margin-top: 30px;
+border-radius: 10px;
+margin-bottom: 0;
+cursor:pointer;
+margin-bottom: 0;
+}
+
+select:focus{
+    outline: none
+}
 
 .productCard:hover{
     color: #fff;
@@ -38,9 +51,12 @@ body{
     float: right;
     margin-top: 20px;
     border: 1px #bbb solid;
+    background-color: #162252;
+    color: white
 }
 #btn:hover{
     background-color: #ccc;
     color: #fff;
     outline: none;
+
 }
