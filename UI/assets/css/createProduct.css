@@ -1,5 +1,6 @@
 body{
     margin: 0px;
+    background-color: #efe8dc;
 }
 
 .productAdd{
@@ -35,7 +36,14 @@ form{
     margin-top: 40px;
     height: 40px;
     cursor: pointer;
-    
+    background-color: #162252;
+    color: #ccc;
+    font-weight: bold;
+}
+
+#btn:hover{
+    background-color: #ccc;
+    color: #162252;
 }
 
 input{
@@ -45,12 +53,15 @@ input{
 }
 label{
     height: 40px;
-    margin-right: 10px;
+    margin-right: 20px;
     /* background-color: pink; */
     padding-top: 5px;
     font-weight: bold;
     font-size: 20px;
     width: 30%;
+    background-color: #162252;
+    color: white;
+    padding-left: 15px;
 }
 textarea{
     flex: 1;
@@ -59,4 +70,5 @@ textarea{
 h1{
     text-align: center;
     padding-top: 50px;
+    color: #162252;
 }
