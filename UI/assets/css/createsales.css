@@ -1,5 +1,8 @@
 body{
     margin: 0px;
+    background-color: ##efe8dc;
+    font-family: 'segoe ui';
+    color: #162252;
 }
 
 .addProduct{
@@ -27,7 +30,7 @@ th{
     height: 40px;
     font-weight: bold;
     font-size: 20px;
-    background-color:#505050;
+    background-color:#162252;
     color: #fff;
 }
 td{
@@ -90,6 +93,7 @@ button:hover{
 }
 #addBtn{
     cursor: pointer;
+    border-radius: 5px;
 }
 #addBtn:hover{
     background-color: #777;
@@ -104,7 +108,7 @@ button:hover{
 h1{
     text-align: center;
     padding: 50px;
-    color: rgb(14, 13, 13);
+    
 }   
 
 ::placeholder{
