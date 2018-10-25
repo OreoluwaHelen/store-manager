@@ -2,7 +2,7 @@ body{
     margin: 0px;
     background-color: ##efe8dc;
     font-family: 'segoe ui';
-    color: #162252;
+    color: #efe8dc;
 }
 
 .addProduct{
@@ -85,13 +85,14 @@ input:focus, input:active{
     
 }
 button:hover{
-    background-color: #777;
+    background-color: #162252;
     color: #fff;
 }
 #btn:focus, #btn:active{
     outline: none;
 }
 #addBtn{
+    background-color: #162252
     cursor: pointer;
     border-radius: 5px;
 }
@@ -108,7 +109,7 @@ button:hover{
 h1{
     text-align: center;
     padding: 50px;
-    
+    color: #162252;
 }   
 
 ::placeholder{

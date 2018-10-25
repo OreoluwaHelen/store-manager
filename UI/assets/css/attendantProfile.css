@@ -1,0 +1,14 @@
+body{
+    margin: 0px, auto;
+    background-color: #efe8dc;
+}
+
+
+.container{
+    width: 80%;
+    margin: 0px auto;
+}
+.attendant-info-div{
+    display: flex;
+    justify-content: space-around;
+}
