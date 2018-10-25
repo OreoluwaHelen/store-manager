@@ -24,6 +24,30 @@ body{
      cursor: pointer;
      margin: 10px 0;
 }
+select{
+    width: 40%;
+    height: 50px;
+    margin-top: 40px;
+border-radius: 10px;
+margin-bottom: 30px;
+cursor:pointer;
+margin-bottom: 0;
+background-color: #ccc;
+font-weight: bold;
+text-align: center;
+}
+
+select:focus{
+    outline: none
+}
+
+select:hover{
+    background-color: #162252;
+    color: #ccc;
+}
+select, #btn{
+    display:inline;
+}
 
 .productCard:hover{
     color: #fff;
@@ -36,11 +60,14 @@ body{
     border-radius: 5px;
     box-shadow: 2px 2px 4px #bbb;
     float: right;
-    margin-top: 20px;
+    margin-top: 0;
     border: 1px #bbb solid;
+    background-color:#ccc ;
+    color: white
 }
 #btn:hover{
-    background-color: #ccc;
+    background-color: #162252;
     color: #fff;
     outline: none;
+
 }
