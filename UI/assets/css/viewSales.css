@@ -4,8 +4,8 @@ body{
 
 h1{
     text-align: center;
-    
-    color: rgb(14, 13, 13);
+    color:#162252;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }   
 
 p{
@@ -37,7 +37,7 @@ th{
     height: 40px;
     font-weight: bold;
     font-size: 20px;
-    background-color:#505050;
+    background-color:#162252;
     color: #fff;
 }
 td{
@@ -113,14 +113,16 @@ tr:nth-child(odd) {background-color:#eee; }
         font-weight: bold;
         float: right;
         margin-right: 20px;
-        
+        background-color: #162252;
+        color: #fff
     }
     button:hover{
         background-color: #777;
         color: #fff;
     }
-    #btn:focus, #btn:active{
+    #btn:focus, #btn:hover, #btn:active{
         outline: none;
+        background-color: #777;
     }
 
     @media print {

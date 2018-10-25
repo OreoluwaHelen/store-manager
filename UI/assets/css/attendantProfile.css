@@ -1,5 +1,5 @@
 body{
-    margin: 0px, auto;
+    margin: 0 auto;
     background-color: #efe8dc;
 }
 
@@ -12,3 +12,88 @@ body{
     display: flex;
     justify-content: space-around;
 }
+
+#attendant-info{
+    margin-top: 50px
+}
+img{
+    border-radius: 25px;
+    
+    
+}
+
+table{
+    border-collapse: collapse;
+    /* width: 50%; */
+    margin:  auto;
+    width: 80%;
+    margin-top: 40px;
+    
+}
+th{
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color:#162252;
+    color: #fff;
+}
+td{
+    height: 30px;
+}
+
+th,td{
+    padding: 10px;
+    text-align: left;
+    /* background-color:rgb(238, 75, 189); */
+    border-bottom: 1px solid black;
+}
+
+tr:nth-child(odd) {background-color:#eee; }
+
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+    
+        table { 
+              width: 100%; 
+        }
+    
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid #ccc; }
+        
+        td { 
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 50%; 
+        }
+    
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding-right: 10px; 
+            white-space: nowrap;
+            /* Label the data */
+            content: attr(data-column);
+    
+            color: #000;
+            font-weight: bold;
+        }
+    
+    }
