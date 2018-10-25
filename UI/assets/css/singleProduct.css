@@ -1,5 +1,7 @@
 body{
-    margin: 0px;
+    /* background-color: ##efe9e1; */
+    margin: 0px auto;
+    background-color: ;
 }
 .card{
     display: flex;
@@ -36,5 +38,15 @@ body{
     height: 40px;
     cursor: pointer;
     ;
+    
+}
+
+.modal{
+    display: none;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 80%;
+    overflow: auto;
     
 }

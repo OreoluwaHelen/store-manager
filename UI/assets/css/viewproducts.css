@@ -1,3 +1,8 @@
+body{
+    margin: 0px auto;
+    background-color: #efe8dc;
+}
+
 .allproducts{
     display: flex;
     flex-direction: column;

@@ -1,12 +1,16 @@
 body{
     margin: 0px;
+   background-color: #efe9e1;
+
 }
 .userAdd{
     margin: 3%;
-    border: 1px solid rgb(190, 181, 181);
+    border: 1px solid rgba(168, 206, 241, 0.281);
     box-shadow: 2px 2px 2px 2px #ccc;
     border-radius: 5px;
     padding-bottom: 70px;
+    
+   
 }
 
 #buttons{
@@ -26,7 +30,7 @@ th{
     height: 40px;
     font-weight: bold;
     font-size: 20px;
-    background-color:#505050;
+    background-color:#162252;
     color: #fff;
 }
 td{
@@ -40,7 +44,7 @@ th,td{
     border-bottom: 1px solid black;
 }
 
-tr:nth-child(odd) {background-color:#eee; }
+tr:nth-child() {background-color:#eee; }
 
 
 h1{
@@ -48,9 +52,8 @@ h1{
     color: black;
     margin-top: 70px;
     padding-bottom: 40px;
-}
-input,label{
-    /* display: block */
+    font-family: 'segoe ui';
+    color: #162252;
 }
 
 
@@ -61,11 +64,17 @@ input{
 }
 label{
     height: 40px;
-    margin-right: 10px;
-    /* background-color: pink; */
+    margin-right: 30px;
+    background-color: #162252;
     padding-top: 5px;
     font-weight: bold;
-    font-size: 20px
+    font-size: 20px;
+    width: 150px;
+    color: #fff;;
+    text-align: center;
+    padding-top: 20px;
+    outline: none;
+    
 }
 
 .field{
