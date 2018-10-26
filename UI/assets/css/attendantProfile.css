@@ -14,9 +14,10 @@ body{
 }
 
 #attendant-info{
-    margin-top: 50px
+    margin-top: 60px
 }
 img{
+    margin-top: 25px;
     border-radius: 25px;
     
     
@@ -95,5 +96,6 @@ tr:nth-child(odd) {background-color:#eee; }
             color: #000;
             font-weight: bold;
         }
+        
     
     }

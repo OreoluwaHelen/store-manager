@@ -1,29 +1,60 @@
 body{
-    margin: 0px;
-    background-color: #efe8dc;
-    font-family: 'segoe ui';
-   ;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+H1{
+    text-align: center;
 }
 
-.addProduct{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    margin: 20px 100px;
+button{
+    margin-top: 20px;
+    height: 35px;
     border-radius: 5px;
-    background-color: #fff;
-    border: 1px #ccc solid;
-    box-shadow: 4px 4px 10px #ccc;
-    padding: 20px;
-    padding-bottom: 50px;
+    padding-top: 10px auto;
+    background-color: #162252e2;
+    font-size: 15px;
+    outline-style: none;
+    width: 10%;
+    color:white;
+    box-shadow: 2px 2px 2px 2px #162252; 
+    font-weight: bold;
+    cursor: pointer;
+    
   }
+
+  button:hover{
+    outline: #fff;
+    background-color: #020826;
+    
+  }
+
+  #buttons{
+    border-radius: 5px;
+    box-shadow:2px 2px 2px #ccc;
+    float: right;
+  }
+
+select{
+    width: 50%;
+    height: 50px;
+    margin-top: 80px;
+border-radius: 10px;
+margin-bottom: 0;
+cursor:pointer;
+margin: 40px 60px 20px 120px
+}
+
+select:focus{
+    outline: none
+}
 
 table{
     border-collapse: collapse;
     /* width: 50%; */
     margin:  auto;
     width: 80%;
+    margin-top: 40px;
+    margin-top: 100px
     
 }
 th{
@@ -37,6 +68,7 @@ td{
     height: 30px;
 }
 
+
 th,td{
     padding: 10px;
     text-align: left;
@@ -46,78 +78,6 @@ th,td{
 
 tr:nth-child(odd) {background-color:#eee; }
 
-#product{
-    height: 40px;
-    flex: 2;
-    border-radius: 5px;
-    border: 1px #ccc solid;
-    appearance: none;
-}
-#product:focus{
-    outline: none;
-}
-input{
-    height: 40px;
-    border-radius: 5px;
-    text-align: center;
-    border-color: 1px solid white;
-    flex: 1;
-    border: 1px #ccc solid;
-    margin: 0 20px;
-}
-input:focus, input:active{
-    outline: none;
-}
-
-
-  
-#btn{
-    height: 40px;
-    border-radius: 5px;
-    padding-top: 10px;
-    align-content: center;
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 30px;
-    border: 1px #ccc solid;
-    cursor: pointer;
-    font-weight: bold;
-    
-}
-button:hover{
-    background-color: #162252;
-    color: #fff;
-}
-#btn:focus, #btn:active{
-    outline: none;
-}
-#addBtn{
-    background-color: #162252;
-    cursor: pointer;
-    border-radius: 5px;
-    color: #fff;
-}
-#addBtn:hover{
-    background-color:#162252;
-    color: #fff;
-}
-.products{
-   display: flex;
-   justify-content: space-evenly;
-   margin: 50px;
-}
-
-h1{
-    text-align: center;
-    padding: 50px;
-    color: #162252;
-}   
-
-::placeholder{
-    text-align: center;
-    font-style: initial;
-    color:black;
-}
     @media 
     only screen and (max-width: 760px),
     (min-device-width: 768px) and (max-device-width: 1024px)  {
@@ -165,6 +125,3 @@ h1{
         }
     
     }
-
-    
-
