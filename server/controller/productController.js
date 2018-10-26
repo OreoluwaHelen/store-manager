@@ -10,6 +10,7 @@ class productController {
       products,
     });
   }
+  
 
   static createProduct(req, res) {
     if (!req.body.name || req.body.name.length < 3) {

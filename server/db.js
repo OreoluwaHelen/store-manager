@@ -43,12 +43,12 @@ const db = {
       totalPrice: 200000,
     },
   ],
-  Users: [
+  Users: 
     {
       username: 'oreoluwahelen',
       password: 'admin',
     },
-  ],
+  
 
 
 };

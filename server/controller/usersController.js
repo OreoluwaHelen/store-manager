@@ -4,29 +4,55 @@ const bcrypt = require('bcrypt');
 
 const { Users } = db;
 
-class userController {
+class usersController {
   static newUser(req, res) {
-    bcrypt.hash(req.body.username, 10, (err, hash) => {
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
       if (err) {
-        return res.status(500).json({
+         res.status(500).json({
           status: 'fail',
         });
+        return;
       }
-
-      const users = {
+    const users = {
         id: Users.length + 1,
         username: req.body.username,
         password: hash,
       };
       Users.push(users);
-      return res.status(201).join({
+       res.status(201).send({
         status: 'success',
         message: 'sign up successful',
         users,
       });
     });
   }
+
+  static oldUser(req, res) {
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
+      if (err) {
+         res.status(500).json({
+          status: 'fail',
+        });
+        return;
+      }
+    const users = {
+        id: Users.length + 1,
+        username: req.body.username,
+        password: hash,
+      };
+      Users.push(users);
+       res.status(201).send({
+        status: 'success',
+        message: 'sign in successful',
+        users,
+      });
+    });
+
+  }
+
+
 }
 
 
-export default userController;
+export default usersController;
+
