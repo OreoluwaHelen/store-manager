@@ -154,44 +154,44 @@ describe('Order Endpoint', () => {
 
 });
 
-  describe('Users Endpoint', (done) => {
-    //user signup test
+  // describe('Users Endpoint', (done) => {
+  //   //user signup test
   
-    it('should sign up a user', (done) => {
+  //   it('should sign up a user', (done) => {
       
-      request
-        .post('/api/v1/users/signup')
-        .send({    
-            username: 'oreoluwahelen',
-            password: 'admin',
-          })
-          .end((err, res) => {
-            expect(res.body.status).to.be.equal('success');
-            expect(res.body.users).to.be.an('object');
-            expect(res.body.message).to.equal('sign up successful');
-            done(err);
-          })
-        });
+  //     request
+  //       .post('/api/v1/users/signup')
+  //       .send({    
+  //           username: 'oreoluwahelen',
+  //           password: 'admin',
+  //         })
+  //         .end((err, res) => {
+  //           expect(res.body.status).to.be.equal('success');
+  //           expect(res.body.users).to.be.an('object');
+  //           expect(res.body.message).to.equal('sign up successful');
+  //           done(err);
+  //         })
+  //       });
 
-        it('should sign in a user', (done) => {
-          request
-          .post('/api/v1/users/signup')
-          .send({
-            username: 'oreoluwahelen',
-            password: 'admin',
-       })
+  //       it('should sign in a user', (done) => {
+  //         request
+  //         .post('/api/v1/users/signup')
+  //         .send({
+  //           username: 'oreoluwahelen',
+  //           password: 'admin',
+  //      })
        
-          .end((err, res) => {
-            expect(res.body.status).to.be.equal('success');
-            expect(res.body.users).to.be.an('object');
-            expect(res.body.message).to.equal('sign in successful');
-            done(err);
+  //         .end((err, res) => {
+  //           expect(res.body.status).to.be.equal('success');
+  //           expect(res.body.users).to.be.an('object');
+  //           expect(res.body.message).to.equal('sign in successful');
+  //           done(err);
 
 
-          })
-        });
+  //         })
+  //       });
 
 
-    })
+  //   })
 
     

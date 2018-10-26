@@ -33,6 +33,7 @@
     "coveralls": "^3.0.2",
     "eslint-plugin-import": "^2.14.0",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0"
   },
