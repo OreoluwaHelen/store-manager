@@ -3,7 +3,6 @@ import db from '../db';
 const { sales } = db;
 
 class salesController {
-
   static createSale(req, res) {
     const order = {
       id: sales.length + 1,
@@ -18,6 +17,7 @@ class salesController {
       order,
     });
   }
+  
 
 
   static getSingleSaleOrder(req, res) {
@@ -41,13 +41,12 @@ class salesController {
     });
   }
 
-  static getSales (req, res) {
+  static getSales(req, res) {
     res.status(200).send({
       status: 'success',
       sales,
     });
   }
-
-};
+}
 
 export default salesController;

@@ -1,14 +1,16 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+
 import productRoute from './routes/api/v1/productRoutes';
-import salesRoute from './routes/api//v1/salesRoute';
+import salesRoute from './routes/api/v1/salesRoute';
+import userRoute from './routes/api/v1/userRoute';
 
 const app = express();
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/v1/products', productRoute);
 app.use('/api/v1/sales', salesRoute);
+app.use('/api/v1/users', userRoute);
 
 app.get('/', (req, res) => {
   res.send({ message: 'welcome to your store manager' });
