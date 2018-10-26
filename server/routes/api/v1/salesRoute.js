@@ -9,3 +9,4 @@ route.get('/', salesController.getSales);
 
 
 export default route;
+

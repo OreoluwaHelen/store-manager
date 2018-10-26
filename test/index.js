@@ -1,35 +1,12 @@
 import supertest from 'supertest';
 import chai from 'chai';
-
 import app from '../server/index';
 
 const request = supertest(app);
 const { expect } = chai;
 
-const product = {
-  id: 2,
-  name: 'macbook',
-  desc: 'good laptop',
-  stock: 2,
-  availableStock: 1,
-};
 
-const products = [
-  {
-    id: 1,
-    name: 'macbook',
-    desc: 'good laptop',
-    stock: 2,
-    availableStock: 1,
-  },
-  {
-    id: 2,
-    name: 'macbook',
-    desc: 'good laptop',
-    stock: 2,
-    availableStock: 1,
-  },
-];
+
 describe('initial Testing', () => {
   it('should display welcome', (done) => {
     request
@@ -161,4 +138,21 @@ describe('Order Endpoint', () => {
         done(err);
       });
   });
-});
+
+  describe('Order Endpoint', () => {
+    it('should create sale order', () => {
+      request
+        .post('/api/v1/sales')
+        .send({
+          products: [
+            {
+              product: 'macbook',
+              quantity: 2,
+              price: 5000000,
+            },
+          ],
+          totalPrice: 2000000,
+        });
+    });
+
+  )
