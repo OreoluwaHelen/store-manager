@@ -2,7 +2,7 @@ body{
     margin: 0 auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-H1{
+h1{
     text-align: center;
 }
 
@@ -125,3 +125,5 @@ tr:nth-child(odd) {background-color:#eee; }
         }
     
     }
+
+    

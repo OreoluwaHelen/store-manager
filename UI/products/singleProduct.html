@@ -27,8 +27,12 @@
         </div>
         <input type="checkbox" id="nav-check">
         <div class="nav-links">
+            <a href="./attendantProfile.html">Profile</a>
             <a href="./viewproducts.html">Products</a>
+            <a href="./userAccount.html">Add User</a>
+            <a href="./allSales.html">All Sales</a>
             <a href="../index.html">Sign Out</a>
+            
         </div>
     </div>
 
@@ -40,10 +44,23 @@
         <h3>PRICE: 500G</h3>
         <h4>CURRENT STOCK SIZE: 4</h4>
         <h4>FIXED STOCK SIZE: 1</h4>
-        <button type="button" id="btn" onclick="location.href='modifyProduct.html'">MODIFY PRODUCT</button>
-        <button type="button" id="deleteButton" >DELETE</button>
-       
+        <button type="button" id="btn" onclick="location.href='modifyProduct.html'">MODIFY PRODUCT  </button>
+        
+        <button type="button" class=" trigger">DELETE PRODUCT</button>
+        <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">X</span>
+            <h1>Do you want to delete this product?</h1>
+            <section>
+                    <button type="button" class="reject" >YES</button>
+                    <button type="button" class="confirm" >NO</button>
+
+            </section>
+        </div>
+   
     </div>
+    </div>
+    <script src="../assets/js/singleProduct.js"></script>
 
 </body>
 
