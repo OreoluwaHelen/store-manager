@@ -44,11 +44,15 @@ const db = {
     },
   ],
   Users: 
+  [
     {
       username: 'oreoluwahelen',
       password: 'admin',
+      type: 1,
     },
-  
+
+  ]
+      
 
 
 };
