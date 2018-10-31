@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import jwt from 'jsonwebtoken';
-=======
-
->>>>>>> 9bfec806493e1a9215dacba9d8f5ce3115690aa7
 import client from '../config';
 
 
@@ -15,17 +11,12 @@ const getUser = (req, res) => {
             })
         }
         res.status(200).json({
-<<<<<<< HEAD
             message: "Successful",
-=======
-            message: "asdfghjkl",
->>>>>>> 9bfec806493e1a9215dacba9d8f5ce3115690aa7
             data: data.rows[0]
         })
     })
 }
 
-<<<<<<< HEAD
 const userLogIn = (req, res) => {
     const { username, password } = req.body;
 
@@ -97,57 +88,3 @@ const newUser = (req, res) => {
 }
 
 export default { getUser, userLogIn, newUser };
-=======
-export default getUser;
-
-// import db from '../db';
-// import jwt from 'jsonwebtoken';
-
-
-// const { Users } = db;
-
-// class usersController {
-//   static newUser(req, res) {
-//     bcrypt.hash(req.body.password, 10, (err, hash) => {
-//       if (err) {
-//          res.status(500).json({
-//           status: 'fail',
-//         });
-//         return;
-//       }
-//     const users = {
-//         id: Users.length + 1,
-//         username: req.body.username,
-//         password: hash,
-//       };
-//       Users.push(users);
-//        res.status(201).send({
-//         status: 'success',
-//         message: 'sign up successful',
-//         users,
-//       });
-//     });
-//   }
-
-//   static userLogIn(req, res) {
-
-//     const {username, password } = req.body;
-
-//     const loginParams = Users.find (users=> users.username === username  && users.password === password);
-//     if (loginParams){
-//       const token = jwt.sign({
-//         type: `${loginParams.type}`
-//       }, 'secret', { expiresIn: '1h' });
-//       return res.status(200).json({
-//         message: 'welcome, log in successful',
-//         token
-//       });
-//     }
-//       res.status(404).json({
-//         message: 'unathorized user'
-//       })
-// }
-// };
-// export default usersController;
->>>>>>> 9bfec806493e1a9215dacba9d8f5ce3115690aa7
-
