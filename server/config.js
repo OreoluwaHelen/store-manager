@@ -1,17 +1,17 @@
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
-
+// import table from table;
 dotenv.config();
-
-const connectionString = process.env.DATABASE_URL;
-
+console.log('hello');
+// const connectionString = process.env.DARTABASE_URLORE;
+const connectionString = 'postgres://localhost:5432/store_manager';
 const client = new Pool({
-    connectionString 
+    connectionString
 })
 
-
 client.connect((err) => {
-    if(!err) return console.log("connected")
-});
-    
+    if(!err)  console.log('connected');
+})
+
 export default client;
+

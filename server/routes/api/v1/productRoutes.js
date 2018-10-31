@@ -6,10 +6,11 @@ const route = express.Router();
 
 
 
-route.get('/', productController);
+route.get('/', productController.getProducts);
 
-// route.get('/:productId', productController.getSingleProduct);
+route.put('/:productId', productController.modifyProduct);
+route.delete('/:productId', productController.deleteProduct);
 
-// route.post('/', isUserAuthentication, productController.createProduct);
+route.post('/:productId', middlewareController.isUserAuthentication, productController.getAProduct);
 
 export default route;
