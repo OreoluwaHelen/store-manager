@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+
 import client from '../config';
 
 
@@ -11,7 +12,7 @@ const getUser = (req, res) => {
             })
         }
         res.status(200).json({
-            message: "Successful",
+            message: "asdfghjkl",
             data: data.rows[0]
         })
     })
