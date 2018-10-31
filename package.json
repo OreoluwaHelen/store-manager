@@ -6,6 +6,7 @@
   "scripts": {
     "start": "babel-node ./server/index.js",
     "dev": "nodemon ./server/index.js --exec babel-node",
+    "tables-setup": "psql -U postgres -f store_manager.sql",
     "test": "nyc mocha --require babel-core/register --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
@@ -36,6 +37,7 @@
     "express": "^4.16.4",
     "express-validator": "^5.3.0",
     "jsonwebtoken": "^8.3.0",
+    "make-runnable": "^1.3.6",
     "mocha": "^5.2.0",
     "nyc": "^13.1.0",
     "pg": "^7.6.0"

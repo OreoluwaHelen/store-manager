@@ -88,3 +88,4 @@ const newUser = (req, res) => {
 }
 
 export default { getUser, userLogIn, newUser };
+
