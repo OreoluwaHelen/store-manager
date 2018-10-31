@@ -8,10 +8,10 @@ const connectionString = process.env.DATABASE_URL;
 const client = new Pool({
     connectionString 
 })
-console.log(client);
+
 
 client.connect((err) => {
     if(!err) return console.log("connected")
-})
+});
     
 export default client;

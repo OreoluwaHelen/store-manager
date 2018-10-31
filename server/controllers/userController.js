@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import client from '../config';
-
+import bcrypt from 'bcrypt';
 
 
 const getUser = (req, res) => {
@@ -38,7 +38,7 @@ const userLogIn = (req, res) => {
     if (result.rowCount === 0) return res.status(401).json({ message: 'Invalid login credentials'});
 
     bcrypt.compare(password, result.rows[0].user_password, (err, passresponse) => {
-      if (!passresponse) return helper.sendMessage(res, 401, 'Invalid login credentials');
+      if (!passresponse) return res.status(401).json({message: 'Invalid login credentials'});
       const token = jwt.sign({
         id: result.rows[0].id,
         user_type: result.rows[0].user_type

@@ -1,6 +1,6 @@
 import express from 'express';
 import productController from '../../../controllers/productController';
-// import isUserAuthentication from '../../../controllers/middlewareController';
+import middlewareController from '../../../controllers/middlewareController'
 
 const route = express.Router();
 
