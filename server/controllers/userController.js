@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-
 import client from '../config';
 
 
@@ -12,7 +11,7 @@ const getUser = (req, res) => {
             })
         }
         res.status(200).json({
-            message: "asdfghjkl",
+            message: "Successful",
             data: data.rows[0]
         })
     })
@@ -89,4 +88,3 @@ const newUser = (req, res) => {
 }
 
 export default { getUser, userLogIn, newUser };
-
