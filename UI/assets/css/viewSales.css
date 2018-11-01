@@ -1,0 +1,128 @@
+body{
+    margin-top: 5%;
+}
+
+h1{
+    text-align: center;
+    
+    color: rgb(14, 13, 13);
+}   
+
+p{
+    /* display: inline; */
+    padding: 20px;
+    float: right;
+    margin-bottom: 10px;
+
+}
+.viewsales{
+    
+    padding-bottom: 10%;
+    box-shadow: 4px 4px 10px #ccc;
+    margin: 20px 100px;
+    border-radius: 5px;
+    /* justify-content: space-evenly; */
+}
+
+
+
+table{
+    border-collapse: collapse;
+    /* width: 50%; */
+    margin:  auto;
+    width: 80%;
+    
+}
+th{
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color:#505050;
+    color: #fff;
+}
+td{
+    height: 30px;
+}
+
+th,td{
+    padding: 10px;
+    text-align: left;
+    /* background-color:rgb(238, 75, 189); */
+    border-bottom: 1px solid black;
+}
+
+tr:nth-child(odd) {background-color:#eee; }
+
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+    
+        table { 
+              width: 100%; 
+        }
+    
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid #ccc; }
+        
+        td { 
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 50%; 
+        }
+    
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding-right: 10px; 
+            white-space: nowrap;
+            /* Label the data */
+            content: attr(data-column);
+    
+            color: #000;
+            font-weight: bold;
+        }
+    
+    }
+
+    #btn{
+        height: 40px;
+        border-radius: 5px;
+        padding-top: 10px;
+        align-content: center;
+        width: 20%;
+        margin-top: 30px;
+        border: 1px #ccc solid;
+        cursor: pointer;
+        font-weight: bold;
+        float: right;
+        margin-right: 20px;
+        
+    }
+    button:hover{
+        background-color: #777;
+        color: #fff;
+    }
+    #btn:focus, #btn:active{
+        outline: none;
+    }
+
+    @media print {
+        .noPrint {display:none;}
+     }

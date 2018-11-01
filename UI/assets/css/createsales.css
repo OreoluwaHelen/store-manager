@@ -1,0 +1,168 @@
+body{
+    margin: 0px;
+    background-color: ##efe8dc;
+    font-family: 'segoe ui';
+    color: #162252;
+}
+
+.addProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 20px 100px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px #ccc solid;
+    box-shadow: 4px 4px 10px #ccc;
+    padding: 20px;
+    padding-bottom: 50px;
+  }
+
+table{
+    border-collapse: collapse;
+    /* width: 50%; */
+    margin:  auto;
+    width: 80%;
+    
+}
+th{
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color:#162252;
+    color: #fff;
+}
+td{
+    height: 30px;
+}
+
+th,td{
+    padding: 10px;
+    text-align: left;
+    /* background-color:rgb(238, 75, 189); */
+    border-bottom: 1px solid black;
+}
+
+tr:nth-child(odd) {background-color:#eee; }
+
+#product{
+    height: 40px;
+    flex: 2;
+    border-radius: 5px;
+    border: 1px #ccc solid;
+    appearance: none;
+}
+#product:focus{
+    outline: none;
+}
+input{
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    border-color: 1px solid white;
+    flex: 1;
+    border: 1px #ccc solid;
+    margin: 0 20px;
+}
+input:focus, input:active{
+    outline: none;
+}
+
+
+  
+#btn{
+    height: 40px;
+    border-radius: 5px;
+    padding-top: 10px;
+    align-content: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 1px #ccc solid;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+button:hover{
+    background-color: #777;
+    color: #fff;
+}
+#btn:focus, #btn:active{
+    outline: none;
+}
+#addBtn{
+    cursor: pointer;
+    border-radius: 5px;
+}
+#addBtn:hover{
+    background-color: #777;
+    color: #fff;
+}
+.products{
+   display: flex;
+   justify-content: space-evenly;
+   margin: 50px;
+}
+
+h1{
+    text-align: center;
+    padding: 50px;
+    
+}   
+
+::placeholder{
+    text-align: center;
+    font-style: initial;
+    color:black;
+}
+    @media 
+    only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px)  {
+    
+        table { 
+              width: 100%; 
+        }
+    
+        /* Force table to not be like tables anymore */
+        table, thead, tbody, th, td, tr { 
+            display: block; 
+        }
+        
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr { 
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tr { border: 1px solid #ccc; }
+        
+        td { 
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee; 
+            position: relative;
+            padding-left: 50%; 
+        }
+    
+        td:before { 
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 6px;
+            left: 6px;
+            width: 45%; 
+            padding-right: 10px; 
+            white-space: nowrap;
+            /* Label the data */
+            content: attr(data-column);
+    
+            color: #000;
+            font-weight: bold;
+        }
+    
+    }
+
+    
+

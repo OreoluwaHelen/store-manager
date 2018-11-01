@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/viewSales.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <title>View Sales</title>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="nav-header">
+            <div class="nav-title">
+                STORE MANAGER
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <input type="checkbox" id="nav-check">
+        <div class="nav-links">
+            <a href="./createsales.html">Make Sales</a>
+            <a href="../index.html">Sign Out</a>
+        </div>
+    </div>
+    <div class="viewsales">
+        <h1>SALES</h1>
+        <p><b>Attendant: </b>Oreoluwa Adenuga</p>&nbsp;<p><b>Date: </b>Jun 4, 2018</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-column="Products">Rice</td>
+                    <td data-column="Quantity">5</td>
+                    <td data-column="Price">500</td>
+                </tr>
+                <tr>
+                    <td data-column="Products">Rice</td>
+                    <td data-column="Quantity">5</td>
+                    <td data-column="Price">500</td>
+                </tr>
+                <tr>
+                    <td data-column="Products">Rice</td>
+                    <td data-column="Quantity">5</td>
+                    <td data-column="Price">500</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button type="submit" id="btn" onclick="window.print()" class="noprint">PRINT</button>
+
+
+    </div>
+
+
+</body>
+
+</html>

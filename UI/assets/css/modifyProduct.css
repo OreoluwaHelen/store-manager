@@ -1,0 +1,66 @@
+body{
+    margin: 0px;
+}
+
+.productModify{
+    margin: 3%;
+    border: 1px solid rgb(190, 181, 181);
+    box-shadow: 2px 2px 2px 2px #ccc;
+    border-radius: 5px;
+    padding-bottom: 70px;
+}
+
+
+.field{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+form{
+    margin: 0px auto;
+    width: 60%;
+}
+
+
+
+h1{
+    text-align: center;
+    margin-top: 30px;
+}
+
+input{
+    border-radius: 5px;
+    height: 40px;
+    flex: 1;
+}
+label{
+    height: 40px;
+    margin-right: 10px;
+    /* background-color: pink; */
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 30%;
+}
+textarea{
+    flex: 1;
+}
+#btn{
+    display: block;
+    flex: 80%;
+    justify-self: center;
+    width: 40%;
+    align-self: center;
+    margin: 0 auto;
+    box-shadow: 2px 2px 2px #aaaa;
+    border-radius: 5px;
+    margin-top: 40px;
+    height: 40px;
+    cursor: pointer;
+    
+}
+::placeholder{
+    align-content: center;
+}
