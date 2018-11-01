@@ -1,4 +1,6 @@
 import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config()
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import productRoute from './routes/api/v1/productRoutes';
