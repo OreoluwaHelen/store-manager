@@ -1,6 +1,20 @@
 import client from '../config';
 
 
+const createProducts = (req, res) => {
+    const { , last_name, telephone, username, password, user_type } = req.body;
+
+    //Form Validation
+    req.checkBody('first_name', 'Firstname field is required').notEmpty();
+    req.checkBody('last_name', 'Lastname field is required').notEmpty();
+    req.checkBody('telephone', 'Telephone field is required').notEmpty();
+    req.checkBody('username', 'Username field is required').notEmpty();
+    req.checkBody('password', 'Password field is required').notEmpty();
+    req.checkBody('user_type', 'User Type field is required').notEmpty();
+
+}
+
+
 const getProducts = (req, res) => {
     client.query("SELECT * FROM products", (err, result) => {
         if (err) {

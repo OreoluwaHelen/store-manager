@@ -7,6 +7,7 @@
     "start": "babel-node ./server/index.js",
     "dev": "nodemon ./server/index.js --exec babel-node",
     "tables-setup": "psql -U postgres -f store_manager.sql",
+    "heroku-db-setup": "heroku pg:psql -f  store_manager_heroku.sql",
     "test": "nyc mocha --require babel-core/register --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },

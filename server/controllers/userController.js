@@ -32,6 +32,7 @@ const userLogIn = (req, res) => {
     }
 
     client.query('SELECT * FROM users WHERE username = username', (error, result) => {
+      console.log(result.rows);
     if (error) {
       return res.status(500).json({message: 'Internal server error'});
     }
@@ -42,7 +43,7 @@ const userLogIn = (req, res) => {
       const token = jwt.sign({
         id: result.rows[0].id,
         user_type: result.rows[0].user_type
-      }, process.env.LOGINSECRET, {
+      },'secret', {
         expiresIn: '1d'
       });
       res.status(201).json({
@@ -54,12 +55,11 @@ const userLogIn = (req, res) => {
 }
 
 const newUser = (req, res) => {
-    const { first_name, last_name, date_of_employment, telephone, username, user_password, user_type } = req.body;
+    const { first_name, last_name, telephone, username, password, user_type } = req.body;
 
     //Form Validation
     req.checkBody('first_name', 'Firstname field is required').notEmpty();
     req.checkBody('last_name', 'Lastname field is required').notEmpty();
-    req.checkBody('date_of_employement', 'Employement date field is required').notEmpty();
     req.checkBody('telephone', 'Telephone field is required').notEmpty();
     req.checkBody('username', 'Username field is required').notEmpty();
     req.checkBody('password', 'Password field is required').notEmpty();
@@ -67,18 +67,27 @@ const newUser = (req, res) => {
 
     const formErrors = req.validationErrors();
     
-    if (errors) {
-    return helper.sendMessage(res, 404, errors[0].msg);
+    if (formErrors) {
+    // return helper.sendMessage(res, 404, errors[0].msg);
+    res.send('user input is invalid ' +  formErrors )
   }
-  client.query('SELECT * FROM users WHERE username = username', (error, result) => {
+  client.query(`SELECT * FROM users WHERE username = $1`,[username], (error, result) => {
+
     if (result.rowCount === 1) return res.status(409).json({ message: 'Duplicate entry found'});
   });
  
-  bcrypt.hash(password, 10, (errr, hash) => {
-    const query = `INSERT INTO users(first_name, last_name, date_of_employement, telephone, username, password, user_type) VALUES('first_name', 'last_name', 'date_of_employement', 'telephone', 'username', 'hash', 'user_type') RETURNING *`;
-
-    client.query(query, (err, data) => {
+   console.log(password);
+   bcrypt.hash(password, 10, (error, hash) => {
+     console.log(error);
+     if (error) {
+      console.log(error);
+        return res.status(500).json({ message: 'External server error'});
+    }
+    const query = `INSERT INTO users(first_name, last_name,  telephone, username, user_password, user_type) VALUES($1, $2, $3, $4, $5, $6) RETURNING *`;
+console.log(hash);
+    client.query(query,[first_name, last_name, telephone, username, hash, user_type], (err, data) => {
       if (err) {
+        console.log(err);
           return res.status(500).json({ message: 'Internal server error'});
       }
       return res.status(201).json({ message: 'New user created'});
