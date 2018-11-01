@@ -2,9 +2,10 @@ import { Pool } from 'pg';
 
 console.log('hello');
 // const connectionString = process.env.DARTABASE_URLORE;
-const connectionString = 'postgres://localhost:5432/store_manager';
+// const connectionString = 'postgres://localhost:5432/store_manager';
+ const connectionString = 'postgresql://postgres:andle@localhost/store_manager';
 const client = new Pool({
-  connectionString,
+  connectionString
 });
 
 client.connect((err) => {
