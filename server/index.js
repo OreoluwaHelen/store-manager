@@ -1,10 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
-require('./config.js');
 import productRoute from './routes/api/v1/productRoutes';
 import salesRoute from './routes/api/v1/salesRoute';
 import userRoute from './routes/api/v1/auth/userRoute';
+
+require('./config.js');
 
 const app = express();
 app.use(bodyParser.json());

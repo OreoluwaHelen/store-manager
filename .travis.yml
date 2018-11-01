@@ -1,7 +1,14 @@
 language: node_js
 node_js:
  - "node"
+services:
+  - postgrespl
+
  before_script:
+  - psql -c 'create database store-manager;' -U postgres
+  - psql -U postgres -d store-manager -a -f store_manager.sql
   
+  script:
+    - npm test
 after_success:
 - npm run coverage
