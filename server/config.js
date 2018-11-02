@@ -1,15 +1,23 @@
-import { Pool } from 'pg';
+import pg from 'pg';
+import dotenv from 'dotenv';
 
-console.log('hello');
-// const connectionString = process.env.DARTABASE_URLORE;
-// const connectionString = 'postgres://localhost:5432/store_manager';
- const connectionString = 'postgresql://postgres:andle@localhost/store_manager';
-const client = new Pool({
-  connectionString
-});
+dotenv.config();
+let connectionString = ();
 
-client.connect((err) => {
-  if (err) console.log(err);
-});
+const pool = pg.pool({ connectionString });
 
-export default client;
+export default (callback) => {
+  pool.connect ((err, client,done) => callback(err, client, done));
+};
+
+// // const connectionString = process.env.DARTABASE_URLORE;
+// // const connectionString = 'postgres://localhost:5432/store_manager';
+// const client = new client({
+//   connectionString,
+// });
+
+// client.connect((err) => {
+//   if (err) console.log(err);
+// });
+
+// export default client;

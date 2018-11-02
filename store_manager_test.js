@@ -1,5 +1,5 @@
 
-
+const taable =`
 CREATE TABLE users(
     user_id serial PRIMARY KEY,
     first_name VARCHAR (50) NOT NULL,
@@ -43,10 +43,4 @@ VALUES
 
  INSERT INTO sales (products_name, quantity,product_price, total_price)
 VALUES
- ('hypo',5, '3000', '15000');
-
-
-
-
-
-  
+ ('hypo',5, '3000', '15000')`;
