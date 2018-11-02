@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 let connectionString = '';
 
-if ( process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV === 'test') {
   connectionString = process.env.DATABASE_TEST;
 } else if (process.env.NODE_ENV === 'development') {
   connectionString = process.env.DATABASE_DEV;
@@ -13,14 +13,14 @@ if ( process.env.NODE_ENV === 'test') {
 }
 
 
-const pool = pg.pool({ connectionString });
+const client = new pg.Client({ connectionString });
 
-export default (callback) => {
-  pool.connect ((err, client,done) => callback(err, client, done));
-};
-
-
-
+client.connect((err) => {
+    if (err) console.log(err);
+  });
+  
+  export default client;
+  
 
 
 // // const connectionString = process.env.DARTABASE_URLORE;
@@ -29,9 +29,4 @@ export default (callback) => {
 //   connectionString,
 // });
 
-// client.connect((err) => {
-//   if (err) console.log(err);
-// });
-
-// export default client;
-
+//

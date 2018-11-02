@@ -26,22 +26,20 @@ CREATE TABLE users ( user_id serial PRIMARY KEY,
     telephone VARCHAR (20) NOT NULL,
     username VARCHAR (50) UNIQUE NOT NULL, 
     user_password TEXT  NOT NULL,
-    user_type INTEGER NOT NULL)
+    user_type INTEGER NOT NULL);
 
 CREATE TABLE products( product_id serial PRIMARY KEY,
     product_name VARCHAR (50) NOT NULL,
     product_description VARCHAR (200) NOT NULL,
     price INTEGER NOT NULL ,
     product_quantity INTEGER  NOT NULL,
-    available_quantity INTEGER  NOT NULL)
+    available_quantity INTEGER  NOT NULL);
 
 CREATE TABLE sales( sale_id serial PRIMARY KEY,
     products_name VARCHAR(50) NOT NULL,
     quantity INTEGER  NOT NULL,
     product_price INTEGER NOT NULL,
-    total_price INTEGER  NOT NULL)
-
-;
+    total_price INTEGER  NOT NULL);
 
 INSERT INTO users (first_name, last_name, telephone, username, user_password, user_type)
 VALUES
