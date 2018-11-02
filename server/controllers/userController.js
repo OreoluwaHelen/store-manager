@@ -32,26 +32,29 @@ const userLogIn = (req, res) => {
   }
 
   client.query('SELECT * FROM users WHERE username = $1', [username], (error, result) => {
+  
     if (error) {
       return res.status(500).json({ message: 'Internal server error' });
     }
     if (result.rowCount === 0) return res.status(401).json({ message: 'Invalid login credentials' });
 
-    bcrypt.compare(password, result.rows[0].user_password, (err, passresponse) => {
-      if (!passresponse) return res.status(401).json({ message: 'Invalid login credentials' });
+bcrypt.compare(password, result.rows[0].user_password, (err, passresponse) => {
+ if (!passresponse) return res.status(401).json({ message: 'Invalid login credentials' });
       const token = jwt.sign({
         id: result.rows[0].id,
         user_type: result.rows[0].user_type,
       }, 'secret', {
         expiresIn: '1d',
       });
-      res.status(201).json({
-        message: 'Login successful',
-        authenticationToken: token,
+res.status(201).json({
+message: 'Login successful',
+authenticationToken: token,
+
       });
     });
   });
 };
+
 
 const newUser = (req, res) => {
   const {
