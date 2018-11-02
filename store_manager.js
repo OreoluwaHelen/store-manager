@@ -1,38 +1,4 @@
-// -- \ connect store_manager
-
-// -- CREATE TABLE users(
-// --     user_id serial PRIMARY KEY,
-// --     first_name VARCHAR (50) NOT NULL,
-// --     last_name VARCHAR (50) NOT NULL,
-// --     date_of_employment timestamp without time zone default (now() at time zone 'utc') ,
-// --     telephone VARCHAR (20) NOT NULL,
-// --     username VARCHAR (50) UNIQUE NOT NULL, 
-// --     user_password TEXT  NOT NULL,
-// --     user_type INTEGER NOT NULL
-// -- );
-
-
-
-
-// -- CREATE TABLE products(
-// --     product_id serial PRIMARY KEY,
-// --     product_name VARCHAR (50) NOT NULL,
-// --     product_description VARCHAR (200) NOT NULL,
-// --     price INTEGER NOT NULL ,
-// --     product_quantity INTEGER  NOT NULL,
-// --     available_quantity INTEGER  NOT NULL
-// -- );
-
-
-// -- CREATE TABLE  sales(
-// --     sale_id serial PRIMARY KEY,
-// --     products_name VARCHAR(50) NOT NULL,
-// --     quantity INTEGER  NOT NULL,
-// --     product_price INTEGER NOT NULL,
-// --     total_price INTEGER  NOT NULL
-// -- );
-
-import { Client } from 'pg';
+mport { Client } from 'pg';
 
 import dotenv from 'dotenv';
 
@@ -90,16 +56,14 @@ VALUES
  ('hypo',5, '3000', '15000')`;
 
 
-
-
- const Client = new Client(connectionString);
- Client.connect();
- Client.query(table, (err) => {
-   if (err) {
-     Client.end();
-   } else {
-     Client.end();
-   }
-
-   }
-  
+const client = new Client(connectionString);
+client.connect();
+client.query(sql, (err) => {
+  if (err) {
+    client.end();
+    console.log(err.stack);
+  } else {
+    client.end();
+    console.log('all table created');
+  }
+});
