@@ -58,7 +58,7 @@ VALUES
 
 const client = new Client(connectionString);
 client.connect();
-client.query(sql, (err) => {
+client.query(table, (err) => {
   if (err) {
     client.end();
     console.log(err.stack);
