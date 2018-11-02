@@ -4,12 +4,15 @@
   "description": "bootcamp project",
   "main": "./server/index.js",
   "scripts": {
-    "start": "babel-node ./server/index.js",
+    "postinstall": "npm run clean && npm run build",
+    "heroku-postbuild": "babel-node store_manager --exit",
+    "start": "node ./build/index.js",
     "dev": "nodemon ./server/index.js --exec babel-node",
-    "tables-setup": "psql -U postgres -f store_manager.sql",
-    "heroku-db-setup": "heroku pg:psql -f  store_manager_heroku.sql",
-    "test": "nyc mocha --require babel-core/register --exit",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "pretest": "cross-env NODE_ENV=test babel-node store_manager --exit",
+    "test": "cross-env NODE_ENV=test nyc mocha --require babel-register  --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "build": "babel -d ./build ./server",
+    "clean": "rm -rf build && mkdir build"
   },
   "repository": {
     "type": "git",
@@ -33,6 +36,7 @@
     "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.1.0",
     "eslint-plugin-import": "^2.14.0",
     "express": "^4.16.4",

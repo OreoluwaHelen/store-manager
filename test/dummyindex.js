@@ -19,8 +19,7 @@ describe('initial Testing', () => {
 });
 
 describe('Product Endpoint', () => {
-
-  // test for post/create a product
+// test for post/create a product
   it('should create a product ', (done) => {
     request
       .post('/api/v1/products')
@@ -39,7 +38,7 @@ describe('Product Endpoint', () => {
         done(err);
       });
   });
-    //  input validation for product name
+  //  input validation for product name
   it('should create a product ', (done) => {
     request
       .post('/api/v1/products')
@@ -55,10 +54,10 @@ describe('Product Endpoint', () => {
         done(err);
       });
   });
-      // ends here
+  // ends here
 
-      // get all products
-it('should get productS', (done) => {
+  // get all products
+  it('should get productS', (done) => {
     request
       .get('/api/v1/products')
       .end((err, res) => {
@@ -68,7 +67,7 @@ it('should get productS', (done) => {
       });
   });
 
-      // get product by Id
+  // get product by Id
   it('should get product with id', (done) => {
     request
       .get('/api/v1/products/1')
@@ -79,7 +78,7 @@ it('should get productS', (done) => {
       });
   });
 
-    // not get product with wron Id
+  // not get product with wron Id
   it('should not get product with wrong id', (done) => {
     request
       .get('/api/v1/products/10000000')
@@ -91,9 +90,9 @@ it('should get productS', (done) => {
   });
 });
 
-  // sales test
+// sales test
 describe('Order Endpoint', () => {
-    
+
   // post sale order test
   it('should create sale order', (done) => {
     request
@@ -129,7 +128,7 @@ describe('Order Endpoint', () => {
       });
   });
 
-  //not get sale with wrong Id 
+  // not get sale with wrong Id
 
   it('should not get sale order with wrong id', (done) => {
     request
@@ -140,7 +139,7 @@ describe('Order Endpoint', () => {
         done(err);
       });
   });
-  
+
   it('should get all sales order', (done) => {
     request
       .get('/api/v1/sales')
@@ -154,44 +153,44 @@ describe('Order Endpoint', () => {
 
 });
 
-  describe('Users Endpoint', (done) => {
-    //user signup test
-  
-    it('should sign up a user', (done) => {
-      
-      request
-        .post('/api/v1/users/signup')
-        .send({    
-            username: 'oreoluwahelen',
-            password: 'admin',
-          })
-          .end((err, res) => {
-            expect(res.body.status).to.be.equal('success');
-            expect(res.body.users).to.be.an('object');
-            expect(res.body.message).to.equal('sign up successful');
-            done(err);
-          })
-        });
+describe('Users Endpoint', (done) => {
+  // user signup test
 
-        it('should sign in a user', (done) => {
-          request
-          .post('/api/v1/users/signup')
-          .send({
-            username: 'oreoluwahelen',
-            password: 'admin',
-       })
-       
-          .end((err, res) => {
-            expect(res.body.status).to.be.equal('success');
-            expect(res.body.users).to.be.an('object');
-            expect(res.body.message).to.equal('sign in successful');
-            done(err);
+  it('should sign up a user', (done) => {
 
+    request
+      .post('/api/v1/users/signup')
+      .send({
+        username: 'oreoluwahelen',
+        password: 'admin',
+      })
+      .end((err, res) => {
+        expect(res.body.status).to.be.equal('success');
+        expect(res.body.users).to.be.an('object');
+        expect(res.body.message).to.equal('sign up successful');
+        done(err);
+      });
+  });
 
-          })
-        });
+  it('should sign in a user', (done) => {
+    request
+      .post('/api/v1/users/signup')
+      .send({
+        username: 'oreoluwahelen',
+        password: 'admin',
+      })
+
+      .end((err, res) => {
+        expect(res.body.status).to.be.equal('success');
+        expect(res.body.users).to.be.an('object');
+        expect(res.body.message).to.equal('sign in successful');
+        done(err);
 
 
-    })
+      });
+  });
 
-    
+
+});
+
+

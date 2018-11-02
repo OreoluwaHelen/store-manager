@@ -8,6 +8,6 @@ route.get('/', productController.getProducts);
 route.put('/:productId', productController.modifyProduct);
 route.delete('/:productId', productController.deleteProduct);
 
-route.post('/:productId', middlewareController.isUserAuthentication, productController.getAProduct);
+route.get('/:productId', middlewareController.isUserAuthentication, productController.getAProduct);
 
 export default route;

@@ -1,11 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
-dotenv.config()
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import productRoute from './routes/api/v1/productRoutes';
 import salesRoute from './routes/api/v1/salesRoute';
 import userRoute from './routes/api/v1/auth/userRoute';
+
+dotenv.config();
 
 require('./config.js');
 
